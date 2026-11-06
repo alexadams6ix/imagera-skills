@@ -1,0 +1,16 @@
+{
+  "name": "imagera",
+  "owner": {
+    "name": "Imagera"
+  },
+  "metadata": {
+    "description": "Generate and edit images, video, voice and music, and upscale media on Imagera credits."
+  },
+  "plugins": [
+    {
+      "name": "imagera",
+      "source": "./",
+      "description": "Generate and edit images, video, voice and music, and upscale media on Imagera credits."
+    }
+  ]
+}

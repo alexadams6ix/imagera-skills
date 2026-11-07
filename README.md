@@ -1,4 +1,6 @@
-# Imagera skills
+# Imagera: image and video generation MCP server and skills
+
+Generate and edit images, video, voice and music from Claude Code, Cursor, Codex, GitHub Copilot CLI, Gemini CLI and Grok CLI through the Imagera MCP server (`https://mcp.imagera.ai/mcp`, OAuth sign-in, no API key). Every run states its credit cost first, and `estimate_cost` quotes a request for free.
 
 36 agent skills for [Imagera](https://imagera.ai): multi-step jobs (ID sheets, product photos, ads, films, websites) that an agent runs through the Imagera MCP server on your Imagera account, plus the base `imagera-media` skill for any single image, clip, voiceover or track a project needs.
 
@@ -19,6 +21,50 @@ One repo, every agent. Each install adds the Imagera MCP server and these skills
 Start with `imagera-media`: ask your agent for an image, clip, voiceover or track for your project.
 
 Then add the Imagera MCP server (`https://mcp.imagera.ai/mcp`) to your agent and sign in with your Imagera account. Running a skill through MCP is part of the Pro plan. Every run is quoted in credits first (`run_skill` with `confirm: false`) and starts only after you agree.
+
+## Only the MCP server
+
+No plugin needed: any MCP client can add `https://mcp.imagera.ai/mcp` (Streamable HTTP) and sign in with an Imagera account on first use.
+
+| Agent | Add the server |
+|---|---|
+| Claude Code | `claude mcp add --transport http imagera https://mcp.imagera.ai/mcp` |
+| OpenCode | `opencode mcp add imagera --url https://mcp.imagera.ai/mcp` |
+| Amp | `amp mcp add imagera https://mcp.imagera.ai/mcp` |
+| Factory Droid | `droid mcp add imagera https://mcp.imagera.ai/mcp --type http` |
+| Cline | `cline mcp add imagera https://mcp.imagera.ai/mcp --transport http` |
+| Goose | `goose session --with-streamable-http-extension "https://mcp.imagera.ai/mcp"` |
+| Windsurf, Zed, Kiro, Warp, LM Studio, Amazon Q and other apps | add a server with the URL above, or this `mcp.json` entry: `{"mcpServers":{"imagera":{"url":"https://mcp.imagera.ai/mcp"}}}` |
+
+Step-by-step for every client: https://imagera.ai/mcp
+
+## Tools
+
+| Tool | What it does | Cost |
+|---|---|---|
+| `check_credits` | Check credits | free |
+| `estimate_cost` | Estimate cost | free |
+| `check_job` | Check job | free |
+| `list_skills` | List skills | free |
+| `check_skill_run` | Check skill run | free |
+| `list_identities` | List saved IDs | free |
+| `generate_image` | Generate image | credits, stated before it runs |
+| `edit_image` | Edit image | credits, stated before it runs |
+| `upscale_image` | Upscale image | credits, stated before it runs |
+| `detect_ai` | Detect AI image | credits, stated before it runs |
+| `generate_video` | Generate video | credits, stated before it runs |
+| `animate_image` | Animate image | credits, stated before it runs |
+| `enhance_video` | Enhance video | credits, stated before it runs |
+| `generate_3d_model` | Generate 3D model | credits, stated before it runs |
+| `generate_auto` | Imagera Auto | credits, stated before it runs |
+| `generate_voice` | Generate voice | credits, stated before it runs |
+| `clone_voice` | Clone voice | credits, stated before it runs |
+| `generate_music` | Generate music | credits, stated before it runs |
+| `chat_with_model` | Chat with model | credits, stated before it runs |
+| `compare_models` | Compare models | credits, stated before it runs |
+| `run_skill` | Run skill | credits, stated before it runs |
+| `save_identity` | Save ID | credits, stated before it runs |
+| `research_brand` | Research brand | credits, stated before it runs |
 
 ## Skills
 
